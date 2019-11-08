@@ -8,7 +8,6 @@ class VanityNumberView extends Component {
     this.validatePhoneNumberInput = this.validatePhoneNumberInput.bind(this);
     this.onPhoneNumberInputChange = this.onPhoneNumberInputChange.bind(this);
     this.fetchVanityNumbers = this.fetchVanityNumbers.bind(this);
-
   }
 
   onPhoneNumberInputChange(e) {

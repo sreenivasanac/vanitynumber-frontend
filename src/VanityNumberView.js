@@ -22,9 +22,11 @@ class VanityNumberView extends Component {
 
   validatePhoneNumberInput(e) {
     e.preventDefault();
-    const API_URL = 'http://127.0.0.1:5000';
+    const API_URL = 'https://vanitynumber-backend-api.herokuapp.com'; // 'http://127.0.0.1:5000';
+
     let validate_endpoint = '/validate'
     let query = '?phone_number=' + encodeURIComponent(this.state.phoneNumberInput);
+
     fetch(API_URL + validate_endpoint + query)
       .then(response => response.json())
       .then(data => {
@@ -63,10 +65,12 @@ class VanityNumberView extends Component {
           <form autoComplete="off">
             <div className="form-group row">
               <div className="col-md-5">
-                <label htmlFor="phoneNumberInput" className="phone-number-input-label">Telephone Number: </label>
+                <label htmlFor="phoneNumberInput" className="phone-number-input-label">
+                    Telephone Number: </label>
               </div>
               <div className="col-md-5 input-group input-group-lg">
-                <input type="tel" className={"form-control " + inputValidClass} id="phone-number-input" aria-describedby="inputGroup-sizing-lg"
+                <input type="tel" className={"form-control " + inputValidClass}
+                  id="phone-number-input" aria-describedby="inputGroup-sizing-lg"
                   placeholder="+1-xxx-xxx-xxxx" onChange={this.onPhoneNumberInputChange}/>
                   {this.state.isValidPhoneNumberInput === true &&
                     <div className="valid-feedback">
@@ -81,15 +85,16 @@ class VanityNumberView extends Component {
               </div>
 
               <div className="col-md-2">
-                <button type="submit" className="btn btn-primary" onClick={this.validatePhoneNumberInput}>Submit</button>
+                <button type="submit" className="btn btn-primary"
+                  onClick={this.validatePhoneNumberInput}>Submit</button>
               </div>
             </div>
 
           </form>
 
-          <div class="row vanity-number-results">
+          <div className="row vanity-number-results">
             {this.state.vanityNumbers.map((item, index) => (
-              <div class="col-lg-3 col-md-4 col-sm-6" key={index}>{item}</div>
+              <div className="col-lg-3 col-md-4 col-sm-6" key={index}>{item}</div>
             ))}
           </div>
         </header>

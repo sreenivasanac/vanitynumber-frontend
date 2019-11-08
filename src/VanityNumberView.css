@@ -1,12 +1,10 @@
-.App {
+.vanity-number-view {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
+.vanity-number-title {
+  margin-bottom: 40px;
 }
-
-.App-header {
+.vanity-number-view-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -17,6 +15,6 @@
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.phone-number-input {
+
 }
